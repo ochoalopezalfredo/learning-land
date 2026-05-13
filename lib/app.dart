@@ -41,13 +41,13 @@ final _router = GoRouter(
   ],
 );
 
-class LearniaApp extends ConsumerWidget {
-  const LearniaApp({super.key});
+class LearningLandApp extends ConsumerWidget {
+  const LearningLandApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
-      title: 'Learnia',
+      title: 'Learning Land',
       theme: AppTheme.lightTheme,
       routerConfig: _router,
       debugShowCheckedModeBanner: false,

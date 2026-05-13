@@ -1,6 +1,6 @@
-# learnia
+# Learning Land
 
-A new Flutter project.
+App educacional para niños. Aprende a leer y matemáticas con un dinosaurio guía.
 
 ## Getting Started
 

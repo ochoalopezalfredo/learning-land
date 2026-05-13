@@ -41,14 +41,14 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               child: const Center(
                 child: Text(
-                  '🦉',
+                  '🦕',
                   style: TextStyle(fontSize: 80),
                 ),
               ),
             ),
             const SizedBox(height: 24),
             const Text(
-              'Learnia',
+              'Learning Land',
               style: TextStyle(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
