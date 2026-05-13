@@ -157,14 +157,33 @@ body {
 }
 
 .mascot-char {
-  font-size: 80px;
   animation: bounce 3s ease-in-out infinite;
   display: inline-block;
 }
 
+.mascot-char svg {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 8px 20px rgba(88, 204, 2, 0.35));
+}
+
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes dino-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes dino-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.mascot-char:hover svg {
+  animation: dino-breathe 0.8s ease-in-out infinite;
 }
 
 .mascot-speech {
@@ -593,12 +612,16 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--green-light), var(--green));
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 56px;
+  background: linear-gradient(135deg, var(--green-light), var(--green));
   box-shadow: 0 8px 25px rgba(88, 204, 2, 0.3);
+}
+
+.avatar svg {
+  width: 80px;
+  height: 80px;
 }
 
 .profile-name {
@@ -740,8 +763,43 @@ body {
     </div>
 
     <div class="mascot fade-in stagger-2">
-      <span class="mascot-char">🦖</span>
-      <div class="mascot-speech">¡Vamos a aprender!</div>
+      <span class="mascot-char">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Body -->
+          <ellipse cx="50" cy="58" rx="28" ry="24" fill="#58CC02"/>
+          <!-- Belly -->
+          <ellipse cx="50" cy="62" rx="18" ry="16" fill="#7BDF1F"/>
+          <!-- Head -->
+          <ellipse cx="50" cy="28" rx="22" ry="20" fill="#58CC02"/>
+          <!-- Snout -->
+          <ellipse cx="50" cy="36" rx="14" ry="10" fill="#58CC02"/>
+          <!-- Eyes white -->
+          <ellipse cx="42" cy="24" rx="8" ry="9" fill="white"/>
+          <ellipse cx="58" cy="24" rx="8" ry="9" fill="white"/>
+          <!-- Pupils -->
+          <ellipse cx="43" cy="25" rx="4" ry="5" fill="#333"/>
+          <ellipse cx="59" cy="25" rx="4" ry="5" fill="#333"/>
+          <!-- Eye shine -->
+          <circle cx="41" cy="23" r="2" fill="white"/>
+          <circle cx="57" cy="23" r="2" fill="white"/>
+          <!-- Smile -->
+          <path d="M38 40 Q50 48 62 40" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Blush -->
+          <ellipse cx="32" cy="34" rx="5" ry="3" fill="#FFB7C5" opacity="0.6"/>
+          <ellipse cx="68" cy="34" rx="5" ry="3" fill="#FFB7C5" opacity="0.6"/>
+          <!-- Tail -->
+          <path d="M78 58 Q92 52 95 40 Q90 45 82 52" fill="#58CC02"/>
+          <!-- Arms -->
+          <ellipse cx="28" cy="55" rx="6" ry="4" fill="#58CC02" transform="rotate(-30 28 55)"/>
+          <ellipse cx="72" cy="55" rx="6" ry="4" fill="#58CC02" transform="rotate(30 72 55)"/>
+          <!-- Legs -->
+          <ellipse cx="38" cy="78" rx="7" ry="10" fill="#58CC02"/>
+          <ellipse cx="62" cy="78" rx="7" ry="10" fill="#58CC02"/>
+          <!-- Spikes -->
+          <path d="M35 12 L40 22 L45 12 L50 22 L55 12 L60 22 L65 12" fill="#4BA700" opacity="0.7"/>
+        </svg>
+      </span>
+      <div class="mascot-speech">¡Hola! Soy Rex</div>
     </div>
 
     <div class="game-card reading fade-in stagger-3" onclick="showScreen('reading')">
@@ -846,8 +904,30 @@ body {
   </div>
 
   <div class="profile-card fade-in">
-    <div class="avatar">🦖</div>
-    <h2 class="profile-name">Pequeño Explorador</h2>
+    <div class="avatar">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="58" rx="28" ry="24" fill="#58CC02"/>
+        <ellipse cx="50" cy="62" rx="18" ry="16" fill="#7BDF1F"/>
+        <ellipse cx="50" cy="28" rx="22" ry="20" fill="#58CC02"/>
+        <ellipse cx="50" cy="36" rx="14" ry="10" fill="#58CC02"/>
+        <ellipse cx="42" cy="24" rx="8" ry="9" fill="white"/>
+        <ellipse cx="58" cy="24" rx="8" ry="9" fill="white"/>
+        <ellipse cx="43" cy="25" rx="4" ry="5" fill="#333"/>
+        <ellipse cx="59" cy="25" rx="4" ry="5" fill="#333"/>
+        <circle cx="41" cy="23" r="2" fill="white"/>
+        <circle cx="57" cy="23" r="2" fill="white"/>
+        <path d="M38 40 Q50 48 62 40" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="32" cy="34" rx="5" ry="3" fill="#FFB7C5" opacity="0.6"/>
+        <ellipse cx="68" cy="34" rx="5" ry="3" fill="#FFB7C5" opacity="0.6"/>
+        <path d="M78 58 Q92 52 95 40 Q90 45 82 52" fill="#58CC02"/>
+        <ellipse cx="28" cy="55" rx="6" ry="4" fill="#58CC02" transform="rotate(-30 28 55)"/>
+        <ellipse cx="72" cy="55" rx="6" ry="4" fill="#58CC02" transform="rotate(30 72 55)"/>
+        <ellipse cx="38" cy="78" rx="7" ry="10" fill="#58CC02"/>
+        <ellipse cx="62" cy="78" rx="7" ry="10" fill="#58CC02"/>
+        <path d="M35 12 L40 22 L45 12 L50 22 L55 12 L60 22 L65 12" fill="#4BA700" opacity="0.7"/>
+      </svg>
+    </div>
+    <h2 class="profile-name">Rex el Guía</h2>
     <span class="user-level">Nivel 5</span>
   </div>
 
