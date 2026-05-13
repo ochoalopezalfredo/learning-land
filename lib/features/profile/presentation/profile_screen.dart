@@ -51,7 +51,7 @@ class ProfileScreen extends ConsumerWidget {
                       shape: BoxShape.circle,
                     ),
                     child: const Center(
-                      child: Text('🦉', style: TextStyle(fontSize: 56)),
+                      child: Text('🦖', style: TextStyle(fontSize: 56)),
                     ),
                   ),
                   const SizedBox(height: 16),

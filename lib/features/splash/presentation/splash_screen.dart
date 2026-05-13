@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               child: const Center(
                 child: Text(
-                  '🦕',
+                  '🦖',
                   style: TextStyle(fontSize: 80),
                 ),
               ),
